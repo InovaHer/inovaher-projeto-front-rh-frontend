@@ -1,8 +1,8 @@
 import CardColaborador from "../cardcolaborador/CardColaborador"
 import {useEffect, useState } from "react";
 import type Colaborador from "../../models/Colaborador";
-//import { AuthContext } from "../../../contexts/AuthContext";
-//import { buscar } from "../../../services/Service";
+import { AuthContext } from "../../../contexts/AuthContext";
+import { buscar } from "../../../services/Service";
 import { SyncLoader } from "react-spinners";
 
 function ListaColaboradores() {

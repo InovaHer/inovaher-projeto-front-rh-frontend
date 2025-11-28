@@ -1,4 +1,4 @@
-//import type Departamento from "./Departamento";
+import type Departamento from "./Departamento";
 
 export default interface Colaborador{
     id: number;

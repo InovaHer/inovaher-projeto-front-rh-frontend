@@ -90,6 +90,75 @@ function FormColaborador() {
 						onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
 					/>
 				</div>
+				<div className="flex flex-col gap-2">
+					<label htmlFor="dataNascimento">Data de nascimento</label>
+					<input
+						type="text"
+						placeholder="Coloque a data de nascimento do seu colaborador"
+						name="dataNascimento"
+						className="border-2 border-slate-700 rounded p-2"
+						value={colaborador.dataNascimento}
+						onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+					/>
+				</div>
+				<div className="flex flex-col gap-2">
+					<label htmlFor="valor_hora">Valor da hora</label>
+					<input
+						type="text"
+						placeholder="Coloque o valor da hora do seu colaborador"
+						name="valor_hora"
+						className="border-2 border-slate-700 rounded p-2"
+						value={colaborador.valor_hora}
+						onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+					/>
+				</div>
+				<div className="flex flex-col gap-2">
+					<label htmlFor="horas_trabalhadas">Horas trabalhadas</label>
+					<input
+						type="text"
+						placeholder="Coloque a quantidade de horas trabalhadas do seu colaborador"
+						name="horas_trabalhadas"
+						className="border-2 border-slate-700 rounded p-2"
+						value={colaborador.horas_trabalhadas}
+						onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+					/>
+				</div>
+				<div className="flex flex-col gap-2">
+					<label htmlFor="bonus">Bônus</label>
+					<input
+						type="text"
+						placeholder="Coloque o valor do Bônus do seu colaborador"
+						name="bonus"
+						className="border-2 border-slate-700 rounded p-2"
+						value={colaborador.bonus}
+						onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+					/>
+				</div>
+				<div className="flex flex-col gap-2">
+					<label htmlFor="descontos">Descontos</label>
+					<input
+						type="text"
+						placeholder="Coloque o valor total de desconto do seu colaborador"
+						name="descontos"
+						className="border-2 border-slate-700 rounded p-2"
+						value={colaborador.descontos}
+						onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+					/>
+				</div>
+				<div className="flex flex-col gap-2">
+                    <p>Departamento</p>
+                    <select name="departamento" id="departamento" className='border p-2 border-slate-800 rounded' 
+                        onChange={(e) => buscarDepartamentoPorId(e.currentTarget.value)}
+                    >
+                        <option value="" selected disabled>Selecione um Departamento</option>
+                        
+                        {departamentos.map((departamento) => (
+                            <>
+                                <option value={departamento.id} >{departamento.nome}</option>
+                            </>
+                        ))}
+                    </select>
+                </div>
 				<button
 					className="rounded text-slate-100 bg-indigo-400 
                                hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
