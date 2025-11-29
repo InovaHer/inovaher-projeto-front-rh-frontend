@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import type Colaborador from '../../models/Colaborador';
+import type Colaborador from '../../../models/Colaborador';
 
 interface CardColaboradorProps{
     colaborador: Colaborador

@@ -2,6 +2,7 @@
 import { useNavigate, useParams } from "react-router-dom"
 import { ClipLoader } from "react-spinners"
 import type Departamento from "../../../models/Departamento"
+import { deletar, listar } from "../../../services/Service"
 
 
 

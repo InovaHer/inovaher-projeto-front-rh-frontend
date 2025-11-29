@@ -1,8 +1,8 @@
-import CardColaborador from "../cardcolaborador/CardColaborador"
+import CardColaborador from "../../components/colaborador/cardcolaborador/CardColaborador"
 import {useEffect, useState } from "react";
 import type Colaborador from "../../models/Colaborador";
-import { AuthContext } from "../../../contexts/AuthContext";
-import { buscar } from "../../../services/Service";
+
+import { buscar } from "../../services/Service";
 import { SyncLoader } from "react-spinners";
 
 function ListaColaboradores() {
@@ -20,8 +20,7 @@ function ListaColaboradores() {
 
             setIsLoading(true);
 
-            await buscar('/colaborador', setColaborador, {
-            })
+            await buscar('/colaborador', setColaborador, )
 
         }catch(error: any){
             if(error.toString().includes('401')){

@@ -8,5 +8,5 @@ export default interface Colaborador{
     horas_trabalhadas: number;
     bonus: number;
     descontos: number;
-    //departamento?: Departamento[] | null;
+    departamento?: Departamento[] | null;
 }

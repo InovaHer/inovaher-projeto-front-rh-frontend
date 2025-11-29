@@ -1,76 +1,55 @@
+import { useEffect, useState } from "react"
+import { PacmanLoader } from "react-spinners"
+import type Departamento from "../../../models/Departamento"
+import { listar } from "../../../services/Service"
+import CardCategorias from "../carddepartamento/CardDepartamento"
 
-import CardDepartamento from "../carddepartamento/CardDepartamento"
-import {useEffect, useState } from "react";
-import type departamento from "../../../models/Departamento";
-//import { buscar } from "../../../services/Service";
-import { SyncLoader } from "react-spinners";
 
 function ListaDepartamentos() {
+	const [isLoading, setIsLoading] = useState(true)
 
-    
+	const [departamento, setDepartamentos] = useState<Departamento[]>([])
 
-    const [isLoading, setIsLoading] = useState<boolean>(false);
-    
-    const [departamento, setDepartamento] = useState<departamento[]>([]);
+	async function buscarDepartamentos() {
+		await listar("/departamentos", setDepartamentos)
+	}
 
-    
-    
-    useEffect(() => {
-        buscarDepartamento()
-    }, [departamento.length])
+	useEffect(() => {
+		setIsLoading(true)
+		buscarDepartamentos().finally(() => setIsLoading(false))
+	}, [])
 
-    async function buscarDepartamento(){
-        try{
+	return (
+		<>
+			{isLoading && (
+				<div className="flex justify-center items-center min-h-[calc(100vh-8rem)] w-full overflow-x-hidden">
+					<PacmanLoader
+						color="#0D9488"
+						margin={0}
+						size={80}
+						speedMultiplier={2}
+						aria-label="Pacman-loading"
+					/>
+				</div>
+			)}
 
-            setIsLoading(true);
+			<div className="flex justify-center w-full min-h-[calc(100vh-8rem)] overflow-x-hidden">
+				<div className="box-border w-full px-4 py-4 mt-8 mb-4 max-w-8xl sm:px-6 md:px-8 lg:px-12 md:py-6">
+					{!isLoading && departamento.length === 0 && (
+						<div className="my-8 text-2xl text-center md:text-3xl text-slate-700 md:my-16">
+							Nenhuma categoria foi encontrada
+						</div>
+					)}
 
-            await buscar('/departamento', setDepartamento, {
-               
-            })
-
-        }catch(error: any){
-            if(error.toString().includes('401')){
-               setIsLoading(false);
-            }
-        }
-    }
-
-    return (
-        <>
-            {
-                isLoading && (
-                    <div className="flex justify-center w-full my-8">
-                        <SyncLoader
-                            color="#312e81"
-                            size={32}
-                        />
-                    </div>
-                )
-            }
-
-            <div className="flex justify-center w-full px-4 my-4">
-                <div className="container flex flex-col">
-
-                    {
-                       (!isLoading && departamento.length === 0) &&(
-                            <span className="text-3xl text-center my-8">
-                                Nenhum Departamento foi encontrado!
-                            </span>
-                       )
-                    }
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 
-                                    lg:grid-cols-3 gap-8">
-                            {
-                                departamento.map((departamento) => (
-                                    <CardDepartamento key={departamento.id} departamento={departamento}/>
-                                ) )
-                            }
-                            
-                    </div>
-                </div>
-            </div>
-        </>
-    )
+					<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6 mb-4 md:mb-0">
+						{departamento.map((departamento) => (
+							<CardCategorias key={departamento.id} departamento={departamento} />
+						))}
+					</div>
+				</div>
+			</div>
+		</>
+	)
 }
-export default ListaDepartamentos;
+
+export default ListaDepartamentos

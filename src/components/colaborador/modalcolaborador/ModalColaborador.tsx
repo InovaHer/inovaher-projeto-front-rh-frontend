@@ -1,3 +1,7 @@
+import Popup from "reactjs-popup";
+import 'reactjs-popup/dist/index.css'
+import FormColaborador from "../formcolaborador/FormColaborador";
+
 function ModalColaborador() {
     return (
         <>

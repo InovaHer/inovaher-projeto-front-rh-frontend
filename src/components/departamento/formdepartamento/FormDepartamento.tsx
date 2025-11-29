@@ -2,7 +2,8 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import type Departamento from "../../../models/Departamento";
-
+import { atualizar, cadastrar, listar } from "../../../services/Service";
+ 
 function FormDepartamento() {
  const navigate = useNavigate();
  
