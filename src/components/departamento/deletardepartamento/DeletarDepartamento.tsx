@@ -64,7 +64,6 @@ function DeletarDepartamento() {
                     Departamento
                 </header>
                 <p className='h-full p-4 text-xl bg-white md:p-8 md:text-3xl'>{departamento.nome}</p>
-                 <p className='h-full p-4 text-xl bg-white md:p-8 md:text-3xl'>{departamento.descricao}</p>
                 <div className="flex flex-row">
                     <button
                         className='w-full py-2 text-base bg-red-400 text-slate-100 hover:bg-red-600 md:text-lg'

@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 import { PacmanLoader } from "react-spinners"
 import type Departamento from "../../../models/Departamento"
 import { listar } from "../../../services/Service"
-import CardCategorias from "../carddepartamento/CardDepartamento"
+import CardDepartamento from "../carddepartamento/CardDepartamento"
 
 
-function ListaDepartamentos() {
+function ListaDepartamento() {
 	const [isLoading, setIsLoading] = useState(true)
 
 	const [departamento, setDepartamentos] = useState<Departamento[]>([])
@@ -37,13 +37,13 @@ function ListaDepartamentos() {
 				<div className="box-border w-full px-4 py-4 mt-8 mb-4 max-w-8xl sm:px-6 md:px-8 lg:px-12 md:py-6">
 					{!isLoading && departamento.length === 0 && (
 						<div className="my-8 text-2xl text-center md:text-3xl text-slate-700 md:my-16">
-							Nenhuma categoria foi encontrada
+							Nenhum departamento foi encontrado
 						</div>
 					)}
 
 					<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6 mb-4 md:mb-0">
 						{departamento.map((departamento) => (
-							<CardCategorias key={departamento.id} departamento={departamento} />
+							<CardDepartamento key={departamento.id} departamento={departamento} />
 						))}
 					</div>
 				</div>
@@ -52,4 +52,4 @@ function ListaDepartamentos() {
 	)
 }
 
-export default ListaDepartamentos
+export default ListaDepartamento

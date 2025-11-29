@@ -3,7 +3,7 @@ import FormColaborador from "./components/colaborador/formcolaborador/FormColabo
 import ListaColaboradores from "./components/colaborador/listacolaboradores/ListaColaboradores"
 import DeletarDepartamento from "./components/departamento/deletardepartamento/DeletarDepartamento"
 import FormDepartamento from "./components/departamento/formdepartamento/FormDepartamento"
-import ListaDepartamentos from "./components/departamento/listadepartamento/ListaDepartamentos"
+import ListaDepartamentos from "./components/departamento/listadepartamento/ListaDepartamento"
 import Home from "./pages/Home"
 import {BrowserRouter, Route, Routes} from "react-router-dom"
 import 'react-toastify/dist/ReactToastify.css'

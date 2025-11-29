@@ -55,7 +55,7 @@ function FormDepartamento() {
       try {
         await cadastrar(`/departamentos`, departamento, setDepartamento)
 
-        alert('Departamento cadastrada com sucesso')
+        alert('Departamento cadastrado com sucesso')
 
       } catch (error: any) {
         alert('Erro ao cadastrar o Departamento')
