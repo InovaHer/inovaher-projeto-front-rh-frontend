@@ -6,6 +6,7 @@ export default interface Colaborador {
     horasTrabalhadas: number;
     bonus: number;
     descontos: number;
+    foto?: string;
     departamento: {
         id: number;
         nome?: string;

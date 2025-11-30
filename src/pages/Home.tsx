@@ -22,7 +22,6 @@ function Home() {
                     {/* botões */}
                     <div className="flex gap-9">
                         <ModalColaborador />
-                        <button className="border rounded-full  p-2">Calcular Salario</button>
                     </div>
                 </div>
                 {/* banner da empresa */}

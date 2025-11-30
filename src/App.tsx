@@ -1,15 +1,15 @@
-import DeletarColaborador from "./components/colaboradores/deletarcolaboradores/DeletarColaborador"
-import FormColaborador from "./components/colaboradores/formcolaborador/FormColaborador"
-import DeletarDepartamento from "./components/departamento/deletardepartamento/DeletarDepartamento"
-import FormDepartamento from "./components/departamento/formdepartamento/FormDepartamento"
-import ListaDepartamentos from "./components/departamento/listadepartamento/ListaDepartamentos"
+import DeletarDepartamento from "./components/departamentos/deletardepartamentos/DeletarDepartamento"
+import FormDepartamento from "./components/departamentos/formdepartamento/FormDepartamento"
+import ListaDepartamentos from "./components/departamentos/listadepartamento/ListaDepartamento"
 import Home from "./pages/Home"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import 'react-toastify/dist/ReactToastify.css'
 import Footer from "./components/footer/Footer"
 import Navbar from "./components/navbar/Navbar"
 import { ToastContainer } from "react-toastify"
-import ListarColaboradores from "./components/colaboradores/listarcolaboradores/ListarColaboradores"
+import ListaColaboradores from "./components/colaboradores/listarcolaboradores/ListarColaboradores"
+import DeletarColaborador from "./components/colaboradores/deletarcolaboradores/DeletarColaborador"
+import FormColaborador from "./components/colaboradores/formcolaborador/FormColaborador"
 
 function App() {
 	return (
@@ -26,7 +26,7 @@ function App() {
 						<Route path="/cadastrardepartamentos" element={<FormDepartamento />} />
 						<Route path="/editardepartamento/:id" element={<FormDepartamento />} />
 						<Route path="/deletardepartamento/:id" element={<DeletarDepartamento />} />
-						<Route path="/colaboradores" element={<ListarColaboradores />} />
+						<Route path="/colaboradores" element={<ListaColaboradores />} />
 						<Route path="/cadastrarcolaborador" element={<FormColaborador />} />
 						<Route path="/editarcolaborador/:id" element={<FormColaborador />} />
 						<Route path="/deletarcolaborador/:id" element={<DeletarColaborador />} />

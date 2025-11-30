@@ -225,6 +225,30 @@ function FormColaborador({ close }: { close?: () => void }) {
                 </div>
 
                 <div className="flex flex-col gap-2">
+                    <label htmlFor="foto" className="font-medium">URL da Foto</label>
+                    <input
+                        type="text"
+                        name="foto"
+                        id="foto"
+                        placeholder="https://exemplo.com/imagem.jpg"
+                        value={colaborador.foto || ""}
+                        onChange={atualizarEstado}
+                        className="border-2 border-slate-700 rounded p-2 bg-white text-base"
+                    />
+                </div>
+
+                {colaborador.foto && (
+                    <div className="flex justify-center mt-2">
+                        <img
+                            src={colaborador.foto}
+                            alt="Foto do colaborador"
+                            className="w-28 h-28 rounded-full object-cover border"
+                        />
+                    </div>
+                )}
+
+
+                <div className="flex flex-col gap-2">
                     <label htmlFor="departamento">Departamento</label>
 
                     <select
