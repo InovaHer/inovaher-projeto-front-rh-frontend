@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import { deletar, listar } from "../../../services/Service"
 import type Colaborador from "../../../models/Colaborador"
 import { ClipLoader } from "react-spinners"
+import { ToastAlerta } from "../../../utils/ToastAlerta"
 
 
 function DeletarColaborador() {
@@ -16,9 +17,9 @@ function DeletarColaborador() {
 
     async function buscarPorId(id: string) {
         try {
-            await listar(`/colaborador/${id}`, setColaborador)
+            await listar(`/colaboradores/${id}`, setColaborador)
         } catch (error: any) {
-            alert('Colaborador não encontrado!')
+            ToastAlerta('Colaborador não encontrado!', 'erro')
             console.error(error)
         }
     }
@@ -33,13 +34,13 @@ function DeletarColaborador() {
         setIsLoading(true)
 
         try {
-            await deletar(`/colaborador/${id}`)
+            await deletar(`/colaboradores/${id}`)
 
-           alert('Colaborador apagado!')
+            ToastAlerta('Colaborador apagado!', 'sucesso')
 
         } catch (error) {
-           alert('Erro ao apagar o Colaborador')
-           console.error(error)
+            ToastAlerta('Erro ao apagar o Colaborador', 'erro')
+            console.error(error)
         }
 
         setIsLoading(false)
@@ -60,7 +61,13 @@ function DeletarColaborador() {
                     className='py-2 px-4 md:px-6 bg-slate-600 text-white font-bold text-lg md:text-2xl'>
                     Colaborador
                 </header>
-                <p className='p-4 md:p-8 text-xl md:text-3xl bg-white h-full'>{colaborador.nome}</p>
+                <p><strong>Nome:</strong> {colaborador.nome}</p>
+                <p><strong>Data Nascimento:</strong> {colaborador.dataNascimento}</p>
+                <p><strong>Valor Hora:</strong> R$ {colaborador.valorHora}</p>
+                <p><strong>Horas Trabalhadas:</strong> {colaborador.horasTrabalhadas}</p>
+                <p><strong>Bônus:</strong> R$ {colaborador.bonus}</p>
+                <p><strong>Descontos:</strong> R$ {colaborador.descontos}</p>
+                <p><strong>Departamento:</strong> {colaborador.departamento?.nome}</p>
                 <div className="flex flex-row">
                     <button
                         className='text-slate-100 bg-red-500 hover:bg-red-700 w-full py-2 text-base md:text-lg'
@@ -74,8 +81,8 @@ function DeletarColaborador() {
                     >
                         {isLoading ?
                             <ClipLoader
-                            color="#ffffff"
-                            size={24}
+                                color="#ffffff"
+                                size={24}
                             /> :
                             <span>Sim</span>
                         }
