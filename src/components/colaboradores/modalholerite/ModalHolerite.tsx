@@ -1,9 +1,8 @@
 import Popup from "reactjs-popup";
 
 interface ModalHoleriteProps {
-    colaborador: any;
-}
-
+    colaborador: any;}
+    
 function ModalHolerite({ colaborador }: ModalHoleriteProps) {
 
     const salarioBruto = colaborador.valorHora * colaborador.horasTrabalhadas;

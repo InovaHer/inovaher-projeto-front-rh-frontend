@@ -7,7 +7,13 @@ function ModalColaborador() {
         <Popup
             trigger={
                 <button
-                    className='border rounded px-4 py-2 hover:bg-blue-600 hover:text-white'>
+                    className="
+    bg-indigo-700 hover:bg-indigo-800
+    text-white font-semibold
+    px-8 py-3 rounded-2xl
+    shadow-xl hover:scale-105
+    transition duration-300
+  ">
                     Novo Colaborador
                 </button>
             }
@@ -17,7 +23,7 @@ function ModalColaborador() {
                 paddingBottom: '2rem'
             }}
         >
-            {((close: () => void) => (
+           {((close: () => void) => (
                 <FormColaborador close={close} />
             )) as any}
         </Popup>

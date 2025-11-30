@@ -7,7 +7,12 @@ function ModalDepartamento() {
             <Popup
                 trigger={
                     <button
-                        className='border rounded px-4 py-2 hover:bg-(--color-radical-red-400) hover:text-(--color-radical-red-800)'>
+                        className="
+                         bg-indigo-700 hover:bg-indigo-800
+                         text-white font-semibold
+                        px-8 py-3 rounded-2xl
+                        shadow-xl hover:scale-105
+                        transition duration-300">
                         Novo Departamento
                     </button>
                 }

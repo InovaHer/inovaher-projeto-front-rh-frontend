@@ -19,7 +19,8 @@ function CardColaboradores({ colaborador }: Readonly<CardColaboradorProps>) {
 
 
     return (
-        <div className="p-4 flex flex-col gap-4">
+        <div className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition flex flex-col gap-4">
+
 
             <div className="flex flex-col items-center">
                 <img
