@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react"
+﻿﻿import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { ClipLoader } from "react-spinners"
 import type Departamento from "../../../models/Departamento"
@@ -18,7 +18,7 @@ function DeletarDepartamento() {
         try {
             await listar(`/departamentos/${id}`, setDepartamento)
         } catch (error: any) {
-            alert('Departamento não encontrado!')
+            ToastAlerta('Departamento não encontrado!', 'erro')
             console.error(error)
         }
     }
@@ -52,25 +52,25 @@ function DeletarDepartamento() {
 
     return (
         <div className='container w-full max-w-md px-4 pt-4 mx-auto md:pt-6'>
-            <h1 className='py-4 text-3xl text-center md:text-4xl'>Deletar Departamento</h1>
-            <p className='mb-4 text-base font-semibold text-center md:text-lg'>
+            <h1 className='text-3xl md:text-4xl text-center py-4 text-fuchsia-700'>Deletar Departamento</h1>
+            <p className='text-center font-semibold mb-4 text-base md:text-lg text-fuchsia-700'>
                 Você tem certeza de que deseja apagar o departamento a seguir?</p>
-            <div className='flex flex-col justify-between overflow-hidden border rounded-2xl'>
+            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between bg-indigo-100'>
                 <header
-                    className='px-4 py-2 text-lg font-bold text-white md:px-6 bg-slate-600 md:text-2xl'>
+                    className='py-2 px-4 md:px-6 bg-indigo-700 text-white font-bold text-lg md:text-2xl'>
                     Departamento
                 </header>
-                <p className='h-full p-4 text-xl bg-white md:p-8 md:text-3xl'>{departamento.nome}</p>
-                <p className='h-full p-4 text-xl bg-white md:p-8 md:text-3xl'>{departamento.descricao}</p>
+                <p className='h-full p-4 text-xl md:p-8 md:text-3xl'>{departamento.nome}</p>
+                <p className='h-full p-4 text-xl md:p-8 md:text-3xl'>{departamento.descricao}</p>
                 <div className="flex flex-row">
                     <button
-                        className='w-full py-2 text-base bg-red-400 text-slate-100 hover:bg-red-600 md:text-lg'
+                        className='text-slate-100  bg-fuchsia-500 hover:bg-fuchsia-700 w-full py-2 text-base md:text-lg'
                         onClick={retornar}
                     >
                         Não
                     </button>
                     <button
-                        className='flex items-center justify-center w-full text-base bg-teal-600 text-slate-100 hover:bg-teal-700 md:text-lg'
+                        className='w-full text-slate-100 bg-indigo-500 hover:bg-indigo-700 flex items-center justify-center text-base md:text-lg'
                         onClick={deletarDepartamento}
                     >
                         {isLoading ?

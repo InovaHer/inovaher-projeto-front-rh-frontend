@@ -18,27 +18,38 @@ function Navbar() {
 					
 						
 
-				<div className="flex items-center gap-6 text-sm sm:text-base font-medium">
-                    <Link to="/colaboradores" className="hover:text-fuchsia-600 cursor-pointer transition">
-					    Colaboradores
-                    </Link>
+				<div className="flex items-center gap-3 text-sm sm:text-base font-semibold">
 
-                    <Link to="/departamentos" className="hover:text-fuchsia-600 cursor-pointer transition">
-					    Departamentos
-                    </Link>
+    <Link
+        to="/colaboradores"
+        className="px-4 py-2 rounded-xl bg-white/10 hover:bg-fuchsia-600 hover:text-white transition-all duration-300"
+    >
+        Colaboradores
+    </Link>
 
-                    <Link to="/sobre" className="hover:text-fuchsia-600 cursor-pointer transition">
-					    Sobre nós
-                    </Link>
+    <Link
+        to="/departamentos"
+        className="px-4 py-2 rounded-xl bg-white/10 hover:bg-fuchsia-600 hover:text-white transition-all duration-300"
+    >
+        Departamentos
+    </Link>
 
-                   
+    <Link
+        to="/sobre"
+        className="px-4 py-2 rounded-xl bg-white/10 hover:bg-fuchsia-600 hover:text-white transition-all duration-300"
+    >
+        Sobre nós
+    </Link>
+
+</div>
+
 
                     
 						
 					
 				</div>
 			</div>
-		</div>
+		
 	)
 }
 

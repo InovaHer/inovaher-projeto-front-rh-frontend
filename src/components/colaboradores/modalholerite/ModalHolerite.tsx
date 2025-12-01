@@ -32,7 +32,7 @@ function ModalHolerite({ colaborador }: ModalHoleriteProps) {
             <div>
                 <h2 className="text-2xl font-bold text-center mb-6">Holerite</h2>
 
-                <div className="flex flex-col gap-2 text-lg">
+                <div className="flex flex-col gap-2 text-lg font-semibold">
                     <p><strong>Nome:</strong> {colaborador.nome}</p>
 
                     <p>

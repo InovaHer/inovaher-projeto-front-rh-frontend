@@ -11,7 +11,6 @@ import { ToastAlerta } from "../../../utils/ToastAlerta";
 function FormColaborador({ close }: { close?: () => void }) {
 
     const navigate = useNavigate();
-
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const [departamentos, setDepartamentos] = useState<Departamento[]>([]);
@@ -35,18 +34,15 @@ function FormColaborador({ close }: { close?: () => void }) {
 
     const { id } = useParams<{ id: string }>();
 
-
     useEffect(() => {
         buscarDepartamentos();
     }, []);
-
 
     useEffect(() => {
         if (id) {
             buscarColaboradorPorId(id);
         }
     }, [id]);
-
 
     async function buscarColaboradorPorId(id: string) {
         try {
@@ -57,7 +53,6 @@ function FormColaborador({ close }: { close?: () => void }) {
         }
     }
 
-
     async function buscarDepartamentoPorId(id: number) {
         try {
             await listar(`/departamentos/${id}`, setDepartamento);
@@ -67,7 +62,6 @@ function FormColaborador({ close }: { close?: () => void }) {
         }
     }
 
-
     async function buscarDepartamentos() {
         try {
             await listar(`/departamentos`, setDepartamentos);
@@ -76,8 +70,6 @@ function FormColaborador({ close }: { close?: () => void }) {
             console.error(error);
         }
     }
-
-
 
     function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
         const { type, value, name } = e.target;
@@ -95,7 +87,6 @@ function FormColaborador({ close }: { close?: () => void }) {
         }));
     }
 
-
     function retornar() {
         if (close) {
             close();
@@ -103,7 +94,6 @@ function FormColaborador({ close }: { close?: () => void }) {
             navigate("/colaboradores");
         }
     }
-
 
     async function gerarNovoColaborador(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -115,10 +105,7 @@ function FormColaborador({ close }: { close?: () => void }) {
             departamento: { id: departamento.id }
         };
 
-        console.log("ENVIANDO PARA API:", JSON.stringify(colaboradorParaEnviar, null, 2));
-
         if (id !== undefined) {
-
             try {
                 await atualizar(`/colaboradores`, colaboradorParaEnviar, setColaborador);
                 ToastAlerta("Colaborador atualizado com sucesso", "sucesso");
@@ -137,21 +124,25 @@ function FormColaborador({ close }: { close?: () => void }) {
         }
 
         setIsLoading(false);
-        retornar();
+
+        if (close) {
+            close();
+        }
+
+        navigate("/colaboradores");
     }
 
-
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto my-4 md:my-0 px-4 py-12">
+        <div className="container flex flex-col items-center justify-center mx-auto my-4 md:my-0 px-4 py-12 bg-white">
 
-            <h1 className="text-3xl md:text-4xl text-center mb-6">
+            <h1 className="text-3xl md:text-4xl text-center mb-6 text-indigo-700 font-semibold">
                 {id !== undefined ? "Editar Colaborador" : "Cadastrar Colaborador"}
             </h1>
 
-            <form className="w-full max-w-lg flex flex-col gap-4" onSubmit={gerarNovoColaborador}>
+            <form className="w-full max-w-lg flex flex-col gap-4 text-indigo-800 font-semibold" onSubmit={gerarNovoColaborador}>
 
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="nome" className="font-medium">Nome do Colaborador</label>
+                    <label htmlFor="nome">Nome do Colaborador</label>
                     <input
                         value={colaborador.nome || ""}
                         onChange={atualizarEstado}
@@ -160,7 +151,7 @@ function FormColaborador({ close }: { close?: () => void }) {
                         name="nome"
                         id="nome"
                         required
-                        className="border-2 border-slate-700 rounded p-2 bg-white text-base"
+                        className="border-2 border-indigo-300 rounded p-2 bg-indigo-50"
                     />
                 </div>
 
@@ -170,7 +161,7 @@ function FormColaborador({ close }: { close?: () => void }) {
                         type="text"
                         name="dataNascimento"
                         placeholder="AAAA-MM-DD"
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-indigo-300 bg-indigo-50 rounded p-2"
                         value={colaborador.dataNascimento || ""}
                         onChange={atualizarEstado}
                     />
@@ -182,7 +173,7 @@ function FormColaborador({ close }: { close?: () => void }) {
                         type="number"
                         name="valorHora"
                         placeholder="Valor por hora"
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-indigo-300 bg-indigo-50 rounded p-2"
                         value={colaborador.valorHora || ""}
                         onChange={atualizarEstado}
                     />
@@ -194,7 +185,7 @@ function FormColaborador({ close }: { close?: () => void }) {
                         type="number"
                         name="horasTrabalhadas"
                         placeholder="Quantidade de horas"
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-indigo-300 bg-indigo-50 rounded p-2"
                         value={colaborador.horasTrabalhadas || ""}
                         onChange={atualizarEstado}
                     />
@@ -206,7 +197,7 @@ function FormColaborador({ close }: { close?: () => void }) {
                         type="number"
                         name="bonus"
                         placeholder="Valor do bônus"
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-indigo-300 bg-indigo-50 rounded p-2"
                         value={colaborador.bonus || ""}
                         onChange={atualizarEstado}
                     />
@@ -218,14 +209,14 @@ function FormColaborador({ close }: { close?: () => void }) {
                         type="number"
                         name="descontos"
                         placeholder="Valor dos descontos"
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-indigo-300 bg-indigo-50 rounded p-2"
                         value={colaborador.descontos || ""}
                         onChange={atualizarEstado}
                     />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="foto" className="font-medium">URL da Foto</label>
+                    <label htmlFor="foto">URL da Foto</label>
                     <input
                         type="text"
                         name="foto"
@@ -233,7 +224,7 @@ function FormColaborador({ close }: { close?: () => void }) {
                         placeholder="https://exemplo.com/imagem.jpg"
                         value={colaborador.foto || ""}
                         onChange={atualizarEstado}
-                        className="border-2 border-slate-700 rounded p-2 bg-white text-base"
+                        className="border-2 border-indigo-300 rounded p-2 bg-indigo-50"
                     />
                 </div>
 
@@ -242,11 +233,10 @@ function FormColaborador({ close }: { close?: () => void }) {
                         <img
                             src={colaborador.foto}
                             alt="Foto do colaborador"
-                            className="w-28 h-28 rounded-full object-cover border"
+                            className="w-28 h-28 rounded-full object-cover border-2 border-indigo-300"
                         />
                     </div>
                 )}
-
 
                 <div className="flex flex-col gap-2">
                     <label htmlFor="departamento">Departamento</label>
@@ -254,7 +244,7 @@ function FormColaborador({ close }: { close?: () => void }) {
                     <select
                         name="departamento"
                         id="departamento"
-                        className="border p-2 border-slate-800 rounded"
+                        className="border-2 p-2 border-indigo-300 bg-indigo-50 rounded"
                         value={departamento.id !== 0 ? departamento.id : ""}
                         onChange={(e) => buscarDepartamentoPorId(Number(e.currentTarget.value))}
                     >
@@ -269,7 +259,7 @@ function FormColaborador({ close }: { close?: () => void }) {
                 </div>
 
                 <button
-                    className="rounded text-slate-100 bg-slate-400 hover:bg-slate-800 w-full py-2 mt-2 flex justify-center items-center text-base"
+                    className="rounded text-white bg-indigo-500 hover:bg-indigo-700 w-full py-2 mt-2 flex justify-center items-center text-base font-semibold"
                     type="submit"
                     disabled={isLoading}
                 >
@@ -283,3 +273,4 @@ function FormColaborador({ close }: { close?: () => void }) {
 }
 
 export default FormColaborador;
+

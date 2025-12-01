@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'https://inovaher-projeto-rh.onrender.com'
+    baseURL: 'https://inovaher-projeto-rh2.onrender.com/'
 })
 
 export const buscar = async (url: string, setDados: Function) => {
