@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify"
 import ListaColaboradores from "./components/colaboradores/listarcolaboradores/ListarColaboradores"
 import DeletarColaborador from "./components/colaboradores/deletarcolaboradores/DeletarColaborador"
 import FormColaborador from "./components/colaboradores/formcolaborador/FormColaborador"
+import Sobre from "./pages/Sobre"
 
 function App() {
 	return (
@@ -30,7 +31,7 @@ function App() {
 						<Route path="/cadastrarcolaborador" element={<FormColaborador />} />
 						<Route path="/editarcolaborador/:id" element={<FormColaborador />} />
 						<Route path="/deletarcolaborador/:id" element={<DeletarColaborador />} />
-
+						<Route path="/sobre" element={<Sobre />} />
 					</Routes>
 				</div>
 				<Footer />

@@ -27,7 +27,7 @@ function Navbar() {
 					    Departamentos
                     </Link>
 
-                    <Link to="/cadastrodepartamento" className="hover:text-fuchsia-600 cursor-pointer transition">
+                    <Link to="/sobre" className="hover:text-fuchsia-600 cursor-pointer transition">
 					    Sobre nós
                     </Link>
 
