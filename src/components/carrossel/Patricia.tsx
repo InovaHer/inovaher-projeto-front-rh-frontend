@@ -55,7 +55,7 @@ function Patricia() {
 
 				<div className="flex justify-center items-center w-full">
 					<img
-						src="https://ik.imagekit.io/wvjuanedn/QRCode/Patr%C3%ADcia.svg?updatedAt=1764527603784 "
+						src="https://ik.imagekit.io/wvjuanedn/QRCode/patricia.png?updatedAt=1764593827478"
 						alt="qr patricia"
 						className="w-2/3 md:w-3/4 mx-auto h-64 md:h-96 lg:h-112 object-contain"
 					/>

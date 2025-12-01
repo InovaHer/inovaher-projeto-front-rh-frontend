@@ -55,7 +55,7 @@ function Marcia() {
 
 				<div className="flex justify-center items-center w-full">
 					<img
-						src="https://ik.imagekit.io/wvjuanedn/QRCode/marciacondarco.png?updatedAt=1764525277462"
+						src="https://ik.imagekit.io/wvjuanedn/QRCode/marciacondarco.png?updatedAt=1764592929262"
 						alt="qr marcia"
 						className="w-2/3 md:w-3/4 mx-auto h-64 md:h-80 lg:h-100 object-contain"
 					/>

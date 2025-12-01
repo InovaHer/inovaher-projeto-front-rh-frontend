@@ -55,7 +55,7 @@ function Lauren() {
 
 				<div className="flex justify-center items-center w-full">
 					<img
-						src=" "
+						src="https://ik.imagekit.io/wvjuanedn/QRCode/laurengfogaca.png?updatedAt=1764593805879"
 						alt="qr lauren"
 						className="w-2/3 md:w-3/4 mx-auto h-64 md:h-96 lg:h-112 object-contain"
 					/>
