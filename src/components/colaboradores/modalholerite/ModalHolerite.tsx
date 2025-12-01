@@ -1,8 +1,9 @@
 import Popup from "reactjs-popup";
 
 interface ModalHoleriteProps {
-    colaborador: any;}
-    
+    colaborador: any;
+}
+
 function ModalHolerite({ colaborador }: ModalHoleriteProps) {
 
     const salarioBruto = colaborador.valorHora * colaborador.horasTrabalhadas;
@@ -17,7 +18,7 @@ function ModalHolerite({ colaborador }: ModalHoleriteProps) {
     return (
         <Popup
             trigger={
-                <button className="mt-3 px-4 py-2 bg-teal-600 text-white rounded hover:bg-teal-700">
+                <button className="mt-3 px-4 py-2 bg-sky-600 text-white rounded hover:bg-sky-700">
                     Gerar Holerite
                 </button>
             }
@@ -30,9 +31,9 @@ function ModalHolerite({ colaborador }: ModalHoleriteProps) {
             }}
         >
             <div>
-                <h2 className="text-2xl font-bold text-center mb-6">Holerite</h2>
+                <h2 className="text-2xl font-bold text-center mb-6 text-indigo-800">Holerite</h2>
 
-                <div className="flex flex-col gap-2 text-lg">
+                <div className="flex flex-col gap-2 text-lg text-indigo-800">
                     <p><strong>Nome:</strong> {colaborador.nome}</p>
 
                     <p>
