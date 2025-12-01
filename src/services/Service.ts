@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'https://inovaher-projeto-rh.onrender.com/swagger-ui/swagger-ui/index.html#/'
+    baseURL: 'https://inovaher-projeto-rh2.onrender.com/'
 })
 
 export const buscar = async (url: string, setDados: Function) => {
@@ -21,4 +21,8 @@ export const atualizar = async (url: string, dados: Object, setDados: Function) 
 
 export const deletar = async (url: string) => {
     await api.delete(url)
+}
+export const listar = async (url: string, setDados: Function) => {
+    const resposta = await api.get(url)
+    setDados(resposta.data)
 }

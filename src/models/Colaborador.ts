@@ -1,12 +1,15 @@
-import type Departamento from "./Departamento";
-
-export default interface Colaborador{
-    id: number;
+export default interface Colaborador {
+    id?: number;
     nome: string;
     dataNascimento: string;
-    valor_hora: number;
-    horas_trabalhadas: number;
+    valorHora: number;
+    horasTrabalhadas: number;
     bonus: number;
     descontos: number;
-    //departamento?: Departamento[] | null;
+    foto?: string;
+    departamento: {
+        id: number;
+        nome?: string;
+        descricao?: string;
+    };
 }
