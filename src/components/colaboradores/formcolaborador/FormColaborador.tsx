@@ -87,13 +87,7 @@ function FormColaborador({ close }: { close?: () => void }) {
         }));
     }
 
-    function retornar() {
-        if (close) {
-            close();
-        } else {
-            navigate("/colaboradores");
-        }
-    }
+    
 
     async function gerarNovoColaborador(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();

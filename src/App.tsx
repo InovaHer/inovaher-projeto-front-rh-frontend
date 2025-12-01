@@ -13,31 +13,32 @@ import FormColaborador from "./components/colaboradores/formcolaborador/FormCola
 import Sobre from "./pages/Sobre"
 
 function App() {
-	return (
-		<>
+  return (
+    <div className="min-h-screen bg-slate-200">
+      <ToastContainer />
 
-			<ToastContainer />
-			<BrowserRouter>
-				<Navbar />
-				<div className="min-h-[80vh]">
-					<Routes>
+      <BrowserRouter>
+        <Navbar />
+        
+        <div className="min-h-[80vh]">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/departamentos" element={<ListaDepartamentos />} />
+            <Route path="/cadastrardepartamentos" element={<FormDepartamento />} />
+            <Route path="/editardepartamento/:id" element={<FormDepartamento />} />
+            <Route path="/deletardepartamento/:id" element={<DeletarDepartamento />} />
+            <Route path="/colaboradores" element={<ListaColaboradores />} />
+            <Route path="/cadastrarcolaborador" element={<FormColaborador />} />
+            <Route path="/editarcolaborador/:id" element={<FormColaborador />} />
+            <Route path="/deletarcolaborador/:id" element={<DeletarColaborador />} />
+            <Route path="/sobre" element={<Sobre />} />
+          </Routes>
+        </div>
 
-						<Route path="/" element={<Home />} />
-						<Route path="/departamentos" element={<ListaDepartamentos />} />
-						<Route path="/cadastrardepartamentos" element={<FormDepartamento />} />
-						<Route path="/editardepartamento/:id" element={<FormDepartamento />} />
-						<Route path="/deletardepartamento/:id" element={<DeletarDepartamento />} />
-						<Route path="/colaboradores" element={<ListaColaboradores />} />
-						<Route path="/cadastrarcolaborador" element={<FormColaborador />} />
-						<Route path="/editarcolaborador/:id" element={<FormColaborador />} />
-						<Route path="/deletarcolaborador/:id" element={<DeletarColaborador />} />
-						<Route path="/sobre" element={<Sobre />} />
-					</Routes>
-				</div>
-				<Footer />
-			</BrowserRouter>
-
-		</>
-	)
+        <Footer />
+      </BrowserRouter>
+    </div>
+  )
 }
+
 export default App

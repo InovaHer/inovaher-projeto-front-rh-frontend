@@ -24,7 +24,13 @@ function CardColaboradores({ colaborador }: Readonly<CardColaboradorProps>) {
                 hover:shadow-lg hover:scale-[1.01] transition-all duration-300
             "
         >
-
+               
+            <div className="flex flex-col items-center">
+                <img
+                    src={colaborador.foto}
+                    className="w-24 h-24 rounded-full object-cover border-2 border-indigo-400 shadow"
+                />
+            </div>
             <header className='py-2 text-center text-indigo-700 font-bold text-2xl'>
                 Colaborador
             </header>

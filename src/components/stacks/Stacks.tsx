@@ -4,7 +4,7 @@ function Stacks() {
     return (
         <div className="flex flex-col gap-8 items-center justify-center py-6">
 
-            <h1 className="text-2xl md:text-3xl font-bold text-black">
+            <h1 className="text-2xl md:text-3xl font-bold text-slate-700">
                 Tecnologias utilizadas para desenvolver o projeto
             </h1>
 
@@ -13,7 +13,7 @@ function Stacks() {
 
                 {/* ================= FRONTEND ================= */}
                 <div className="text-center">
-                    <h2 className="text-3xl font-bold text-black mb-12">
+                    <h2 className="text-3xl font-bold text-slate-700 mb-12">
                         Frontend
                     </h2>
 
@@ -21,57 +21,57 @@ function Stacks() {
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-javascript-plain colored text-5xl"></i>
-                            <p className="text-gray-300">JavaScript</p>
+                            <p className="text-slate-700 text-2xl font-semibold">JavaScript</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-typescript-plain colored text-5xl"></i>
-                            <p className="text-gray-300">TypeScript</p>
+                            <p className="text-slate-700 text-2xl font-semibold">TypeScript</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-html5-plain colored text-5xl"></i>
-                            <p className="text-gray-300">HTML</p>
+                            <p className="text-slate-700 text-2xl font-semibold">HTML</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-css3-plain colored text-5xl"></i>
-                            <p className="text-gray-300">CSS</p>
+                            <p className="text-slate-700 text-2xl font-semibold">CSS</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-nodejs-plain colored text-5xl"></i>
-                            <p className="text-gray-300">Node.js</p>
+                            <p className="text-slate-700 text-2xl font-semibold">Node.js</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-react-original colored text-5xl"></i>
-                            <p className="text-gray-300">React</p>
+                            <p className="text-slate-700 text-2xl font-semibold">React</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-git-plain colored text-5xl"></i>
-                            <p className="text-gray-300">Git</p>
+                            <p className="text-slate-700 text-2xl font-semibold">Git</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-github-original colored text-5xl"></i>
-                            <p className="text-gray-300">GitHub</p>
+                            <p className="text-slate-700 text-2xl font-semibold">GitHub</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-vscode-plain colored text-5xl"></i>
-                            <p className="text-gray-300">VS Code</p>
+                            <p className="text-slate-700 text-2xl font-semibold">VS Code</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-tailwindcss-original colored text-5xl"></i>
-                            <p className="text-gray-300">TailwindCSS</p>
+                            <p className="text-slate-700 text-2xl font-semibold">TailwindCSS</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <TbBrandVercel className="text-5xl text-black" />
-                            <p className="text-gray-300">Vercel</p>
+                            <p className="text-slate-700 text-2xl font-semibold">Vercel</p>
                         </div>
 
                     </div>
@@ -79,55 +79,55 @@ function Stacks() {
 
                 {/* ================= BACKEND ================= */}
                 <div className="text-center">
-                    <h2 className="text-3xl font-bold text-black mb-12">
-                        Back end
+                    <h2 className="text-3xl font-bold text-slate-700 mb-12">
+                        Backend
                     </h2>
 
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8 place-items-center">
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-java-plain colored text-5xl"></i>
-                            <p className="text-gray-300">Java</p>
+                            <p className="text-slate-700 text-2xl font-semibold">Java</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-spring-plain colored text-5xl"></i>
-                            <p className="text-gray-300">Spring Boot</p>
+                            <p className="text-slate-700 text-2xl font-semibold">Spring Boot</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-swagger-plain colored text-5xl"></i>
-                            <p className="text-gray-300">Swagger</p>
+                            <p className="text-slate-700 text-2xl font-semibold">Swagger</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-mysql-plain colored text-5xl"></i>
-                            <p className="text-gray-300">MySQL</p>
+                            <p className="text-slate-700 text-2xl font-semibold">MySQL</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-postgresql-plain colored text-5xl"></i>
-                            <p className="text-gray-300">PostgreSQL</p>
+                            <p className="text-slate-700 text-2xl font-semibold">PostgreSQL</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-git-plain colored text-5xl"></i>
-                            <p className="text-gray-300">Git</p>
+                            <p className="text-slate-700 text-2xl font-semibold">Git</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-github-original colored text-5xl"></i>
-                            <p className="text-gray-300">GitHub</p>
+                            <p className="text-slate-700 text-2xl font-semibold">GitHub</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-vscode-plain colored text-5xl"></i>
-                            <p className="text-gray-300">VS Code</p>
+                            <p className="text-slate-700 text-2xl font-semibold">VS Code</p>
                         </div>
 
                         <div className="flex flex-col items-center gap-2">
                             <i className="devicon-docker-plain colored text-5xl"></i>
-                            <p className="text-gray-300">Docker</p>
+                            <p className="text-slate-700 text-2xl font-semibold">Docker</p>
                         </div>
 
                     </div>
