@@ -1,4 +1,4 @@
-﻿import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
+﻿﻿import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import type Departamento from "../../../models/Departamento";
@@ -74,12 +74,12 @@ function FormDepartamento() {
   }
 
   return (
-    <div className="container flex flex-col items-center justify-center px-2 pt-4 mx-auto">
-      <h1 className="my-8 text-3xl text-center md:text-4xl">
+    <div className="container flex flex-col items-center justify-center mx-auto my-4 md:my-0 px-4 py-12">
+      <h1 className="text-3xl md:text-4xl text-center mb-6 text-indigo-700">
         {id === undefined ? 'Cadastrar Departamento' : 'Editar Departamento'}
       </h1>
 
-      <form className="flex flex-col w-full max-w-md gap-4 px-2 md:max-w-1/2"
+      <form className="w-full max-w-lg flex flex-col gap-4 text-indigo-700"
         onSubmit={gerarNovoDepartamento}
       >
         <div className="flex flex-col gap-2 ">
@@ -89,7 +89,7 @@ function FormDepartamento() {
             placeholder="Nome do Departamento"
             id='nome'
             name='nome'
-            className="p-2 text-base bg-white border-2 rounded border-slate-700 utral-800 md:text-lg"
+            className="border-2 border-indigo-900 rounded p-2 bg-indigo-100 text-base"
             required
             value={departamento.nome || ""}
             onChange={(e) => atualizarEstado(e)}
@@ -99,17 +99,17 @@ function FormDepartamento() {
           <label htmlFor="tipo">Descrição</label>
           <input
             type="text"
-            placeholder="Descriçãoo"
+            placeholder="Descrição"
             id='descricao'
             name='descricao'
-            className="p-2 text-base bg-white border-2 rounded border-slate-700 utral-800 md:text-lg"
+            className="border-2 border-indigo-900 rounded p-2 bg-indigo-100 text-base"
             required
             value={departamento.descricao || ""}
             onChange={(e) => atualizarEstado(e)}
           />
         </div>
         <button
-          className="flex justify-center w-full py-2 mx-auto text-base rounded text-slate-100 bg-slate-400 hover:bg-slate-800 md:w-1/2 md:text-lg"
+          className="rounded text-slate-100 bg-indigo-500  hover:bg-indigo-800 w-full py-2 mt-2 flex justify-center items-center text-base"
           type="submit"
         >
           {isLoading ?
